@@ -1,0 +1,7 @@
+{
+  "name": "scan-passeport",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
