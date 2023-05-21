@@ -13,15 +13,20 @@
   line-height: 26px;
 }
 
+ion-content{
+  --ion-background-color:white;
+}
+
 #container p {
   font-size: 16px;
   line-height: 22px;
 
-  color: #8c8c8c;
+  color: #a5a5a5;
 
   margin: 0;
 }
 
 #container a {
   text-decoration: none;
+
 }

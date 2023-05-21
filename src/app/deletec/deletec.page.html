@@ -1,0 +1,47 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+   <img src="../../../assets/images/icon2.png"  routerLink="" alt="">
+    </ion-title>
+    <ion-button slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-item lines="none">
+  <ion-text>
+    <h1>Delete Client</h1>
+  </ion-text>
+</ion-item>
+
+  <ion-item fill="outline" style="color:#3518db">
+    <ion-label  position="floating" style="--color:gray;font-size: small;">Client-ID</ion-label>
+    <ion-input
+
+       #ionInputEl
+       maxlength="8"
+       hintLabel=""
+       [(ngModel)]= "client.id"
+       name="id"
+        required
+        type="text"
+         value="Initial Value"
+
+       >
+    </ion-input>
+  </ion-item>
+
+  <ion-text style="color:red;margin-top: 1%;margin-left: -5%; justify-content: center;display: grid;" *ngIf="errorMessage">
+    <ion-icon slot="start" name="alert-circle-outline"></ion-icon>
+    &nbsp;{{ errorMessage }}</ion-text>
+
+  <ion-button class="next" fill="outline" style="margin-left: 56%;margin-top: 30px;" (click)="onSubmit()">
+          Delete&nbsp;
+  </ion-button>
+
+
+</ion-content>

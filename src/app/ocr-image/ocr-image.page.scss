@@ -1,0 +1,31 @@
+ion-content{
+  --ion-background-color:rgb(255, 255, 255);
+}
+.croppedimg{
+display: block;
+margin-left: auto;
+margin-right: auto;
+
+  width: 100px;
+  height: 100px;
+  background-color: rgb(230, 230, 230);
+  border-radius:43%;
+}
+.choosefile{
+  display: block;
+margin-left: auto;
+margin-right: auto;
+margin-right: 31.5%;
+
+font-family:sans-serif;
+}
+.select{
+  margin-top: 1%;
+  display: grid;
+justify-content: center;
+  --border-color:#3518db;
+  --color:rgb(255, 255, 255);
+  --background: #3518db;
+
+  font-family:sans-serif;
+}

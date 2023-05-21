@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+
+   <img src="../../../assets/images/icon2.png" routerLink="" style="margin-left:-10px;" alt="">
+    </ion-title>
+    <ion-button slot="start" style="--background: white;">
+      <ion-menu-button   menu="main-menu"></ion-menu-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <br><br><br>
+  <h3 class="glow" style="  display: flex;justify-content: center;">Dashboard</h3>
+  <br><br><br>
+  <div class="chart-container" style="height: 20%;  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.1);" >
+    <ion-card>
+      <ion-card-content>
+        <h1  class="animated-text" style="justify-content: center; display: grid;">Clients Numbers</h1>
+        <h1 class="animated-text"  style="justify-content: center; display: grid;">{{this.clientsnumber}}</h1>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+  <div class="chart-container">
+    <canvas id="myChart2"></canvas>
+
+  </div>
+  <div class="chart-container" >
+    <canvas id="myCharts"></canvas>
+
+  </div>
+  <hr>
+
+
+</ion-content>
+

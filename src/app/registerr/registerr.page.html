@@ -1,0 +1,122 @@
+<ion-header>
+
+  <ion-toolbar>
+    <img src="../../../assets/images/icon2.png" style="width: 200px;" routerLink="" alt="">
+    <ion-title><ion-button slot="start">
+    </ion-button></ion-title>
+  </ion-toolbar>
+</ion-header>
+<style>
+  .a{
+    margin-top: 40%;
+position: relative;
+text-align: center;
+  }
+</style>
+
+<ion-content>
+
+<div class="col-md-6" class="col-md-6" style="margin-top:-7%;">
+  <div class="a">
+    <div class="login-page">
+
+     <form
+     style="  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);"
+      *ngIf="!isSuccessful"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+    <br><br>
+      <div class="form-group">
+        <label for="username"  style="color: black;">Username</label>
+        <ion-input
+          type="text"
+          class="form-control"
+          name="username"
+          [(ngModel)]="form.username"
+          required
+          minlength="3"
+          maxlength="20"
+          #username="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+          style="--border-color: #000; --color: #000; --placeholder-color: #351d1d;"
+        /><br>
+        <div class="invalid-feedback" *ngIf="username.errors && f.submitted">
+          <div *ngIf="username.errors['required']">Username is required</div>
+          <div *ngIf="username.errors['minlength']">
+            Username must be at least 3 characters
+          </div>
+          <div *ngIf="username.errors['maxlength']">
+            Username must be at most 20 characters
+          </div>
+        </div>
+      </div><br>
+      <div class="form-group">
+        <label for="email"  style="color: black;">Email</label>
+        <ion-input
+          type="email"
+          class="form-control"
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          email
+          #email="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+          style="--border-color: #000; --color: #000; --placeholder-color: #351d1d;"
+        /><br>
+        <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+          <div *ngIf="email.errors['required']">Email is required</div>
+          <div *ngIf="email.errors['email']">
+            Email must be a valid email address
+          </div>
+        </div>
+      </div><br>
+      <div class="form-group">
+        <label for="password"  style="color: black;">Password</label>
+        <ion-input
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+          style="--border-color: #000; --color: #000; --placeholder-color: #351d1d;"
+        /><br>
+        <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+          <div *ngIf="password.errors['required']">Password is required</div>
+          <div *ngIf="password.errors['minlength']">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button style="
+        text-transform: uppercase;
+        outline: 0;
+        background: #454745;
+        width: 80%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;" class="btn btn-dark btn-block">Sign Up</button>
+      </div><br><br>
+
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
+    </form>
+  </div>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
+    </div>
+  </div>
+</div>
+</ion-content>

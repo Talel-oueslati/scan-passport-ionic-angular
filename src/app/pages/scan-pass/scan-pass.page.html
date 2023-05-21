@@ -1,0 +1,182 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="../../../assets/images/icon2.png" routerLink="" alt="">
+    </ion-title>
+    <ion-button slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-button>
+    <ion-buttons style="float: right;">
+      <ion-button style="float: right;" (click)="cropImage()" *ngIf="myImage">
+        <ion-icon slot="icon-only"  name="checkmark-done-outline" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  <ion-img  *ngIf=" workerReady "[src]="image"  type="file"></ion-img>
+  <ion-input [(ngModel)]="client.image64"  [value]="this.image64" style="display: none;"></ion-input>
+  <ion-grid>
+    <ion-row style="margin-top: 10%;  justify-content: center;">
+      <ion-button class="sc"   (click)="captureImages()" expand="fill">Scan Passport</ion-button>
+     &nbsp; <ion-button class="sc"  (click)="RecognizeImage()" [disabled]="!workerReady">Fill out the form</ion-button>
+
+    </ion-row>
+  </ion-grid>
+
+<!-------card begin----------->
+<ion-card *ngIf=" workerReady && captureProgress > 0 ">
+  <ion-card-header>
+    <ion-card-title>Scan  progress: {{captureProgress}}%</ion-card-title>
+    <ion-card-subtitle>scaning passport</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+   {{ this.codemrz }}
+  </ion-card-content>
+  <ion-button fill="outline " style="color:#3518db; --border-color:#3518db;" (click)="reload()">cancel</ion-button>
+</ion-card>
+
+<!--end card-->
+
+
+<ion-grid>
+  <ion-row>
+    <ion-col>
+
+      <ion-item fill="outline">
+      <ion-label position="floating" style="background-color: white;">Name</ion-label>
+      <ion-input
+        [value]="name"
+        id="name"
+         #ionInputEl
+         placeholder=" FirstName"
+         [(ngModel)]="client.firstname"
+
+
+
+         >
+      </ion-input>
+    </ion-item>
+
+  </ion-col>&nbsp;&nbsp;
+  <ion-col>
+
+  <ion-item fill="outline" style="margin-right: -5%;">
+    <ion-label position="floating" style="background-color: white;">LastName</ion-label>
+    <ion-input
+      [value]="this.lastname"
+       #ionInputEl
+       id="lastname"
+       placeholder="Lastname"
+       [(ngModel)]="client.lastname"
+
+
+       >
+    </ion-input>
+  </ion-item>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-item fill="outline">
+  <ion-label position="floating" style="background-color: white; float: left;">passport_Type</ion-label>
+  <ion-input
+    [value]="this.typepassport"
+    id="passport_type"
+     #ionInputEl
+     placeholder="passport type"
+     [(ngModel)]="client.passport_type"
+     maxlength="1"
+
+     >
+  </ion-input>
+</ion-item>
+
+
+  <ion-item fill="outline">
+    <ion-label position="floating" style="background-color: white;">Nationality</ion-label>
+    <ion-input
+      [value]="this.nationality"
+       #ionInputEl
+       id="nationality"
+       placeholder="Nationality"
+       maxlength="3"
+       [(ngModel)]="client.nationality"
+
+
+
+       >
+    </ion-input>
+  </ion-item>
+
+  <ion-item fill="outline" >
+    <ion-label position="floating" style="background-color: white;" >birth-date</ion-label>
+    <ion-input
+      [value]="this.birth_date"
+       #ionInputEl
+       [(ngModel)]="client.birth_date"
+       id="birth_date"
+       placeholder="birth_date"
+       maxlength="15"
+
+
+
+       >
+    </ion-input>
+  </ion-item>
+
+  <ion-item fill="outline">
+    <ion-label position="floating" style="background-color: white;">Gender</ion-label>
+    <ion-input
+      [value]="this.gender"
+      id="gender"
+       #ionInputEl
+       [(ngModel)]="client.gender"
+       placeholder="gender"
+       maxlength="1"
+
+
+       >
+       </ion-input>
+       </ion-item>
+      <ion-item fill="outline">
+        <ion-label position="floating" style="background-color: white;">Passport_number</ion-label>
+        <ion-input
+          [value]="this.passport_number"
+          id="passport_number"
+           #ionInputEl
+           placeholder="passport number"
+            [(ngModel)]="client.passport_number"
+            maxlength="9"
+
+           >
+        </ion-input>
+      </ion-item>
+      <ion-item fill="outline">
+        <ion-label position="floating" style="background-color: white;">Personal_number</ion-label>
+        <ion-input
+          [value]="this.personal_number"
+          id="personal_number"
+           #ionInputEl
+           placeholder="personal_number"
+           maxlength="11"
+           [(ngModel)]="client.personal_number"
+
+           >
+        </ion-input>
+      </ion-item>
+
+<br>
+<br>
+
+
+        <ion-row  style="display: grid;justify-content: right;">
+          <ion-button class="savebutton" (click)="saveclient()" >save</ion-button>
+        </ion-row>
+
+</ion-content>

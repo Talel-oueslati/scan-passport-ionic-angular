@@ -1,0 +1,96 @@
+<ion-header>
+
+  <ion-toolbar>
+    <img src="../../../assets/images/icon2.png" style="width: 200px;" routerLink="" alt="">
+    <ion-title><ion-button slot="start">
+    </ion-button></ion-title>
+  </ion-toolbar>
+</ion-header>
+<style>
+
+  .a{
+    margin-top: 20%;
+position: relative;
+text-align: center;
+  }
+</style>
+
+<ion-content>
+<div class="col-md-6" style="margin-top:-7%;">
+  <div class="a" >
+<div class="login-page" >
+  <div class="form">
+    <form
+      *ngIf="!isLoggedIn"
+      name="register-form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+
+
+
+        <ion-label style="color: black;" for="username">Username</ion-label>
+        <ion-input
+        label-placement="floating"
+         fill="outline"
+        placeholder="Enter username here"
+          type="text"
+          class="form-control"
+          name="username"
+          [(ngModel)]="form.username"
+          required
+          #username="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+          style="--border-color: #000; --color: #000; --placeholder-color: #351d1d;"
+        />
+        <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
+          <a style="color: rgb(243, 22, 22);"> Username is required!</a>
+        </div>
+
+
+
+
+        <ion-label style="color: black;" for="password">Password</ion-label>
+        <ion-input
+      label-placement="floating"
+       fill="outline"
+        placeholder="Enter password here"
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+          style="--border-color: #000; --color: #000; --placeholder-color: #aaa;"
+
+        />
+        <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="password.errors['required']">Password is required</div>
+          <div  *ngIf="password.errors['minlength']">
+            <a style="color: rgb(243, 22, 22);">Password must be at least 6 characters</a>
+          </div>
+        </div>
+
+      <br>
+      <div class="form-group">
+        <button class="btn btn-dark btn-block">
+          Login
+        </button>
+      </div>
+      <div class="form-group">
+        <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+          Login failed: {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+     <p style="color: #000; margin-top: -20%;" > Logged in as {{ roles }}.</p>
+    </div>
+  </div>
+</div>
+</ion-content>

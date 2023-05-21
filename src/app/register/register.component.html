@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+   <img src="../../../assets/images/icon2.png" routerLink="" style="margin-left:-10px;" alt="">
+    </ion-title>
+    <ion-button slot="start" style="--background: white;color: rgb(255, 255, 255);">
+      <ion-menu-button   menu="main-menu"></ion-menu-button>
+    </ion-button>
+  </ion-toolbar>
+  <style>
+    tbody tr {
+      border-bottom: 1px solid black;
+    }
+  </style>
+</ion-header>
+<ion-content>
+<br>
+
+<div>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;<input  placeholder="Search..." name="Search" #myInput type="text" class="form-control"  id="adresse" (input)= "Search();" />
+</div><br>
+<table class="table table-stiped"  >
+    <thead>
+        <tr>
+          <th style="color:#0e0d2b;"></th>
+          &nbsp;  &nbsp;&nbsp;  &nbsp; <th><a style="color:#0e0d2b;">&nbsp;<i class="fa fa-sort"></i>Id</a></th>
+          &nbsp; &nbsp;  &nbsp; <th><a style="color:#0e0d2b;">&nbsp;<i class="fa fa-sort"></i>passport_number</a></th>
+        </tr>
+    </thead>&nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+   <tbody>
+       <tr *ngFor ="let client of clients" >
+      <td >
+        &nbsp;  &nbsp; <button   (click)= "seemore(client.id)"  type="submit"   class="buttonn" style="vertical-align:middle"><span>see more</span></button>
+        </td>&nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <td id="id" style="color:#0e0d2b;">{{client.id }}</td>
+            &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <td id="id" style="color:#0e0d2b;">{{client.passport_number }}</td>
+            </tr>
+            <hr>
+
+
+    </tbody>
+
+</table>
+</ion-content>
+
+
+
+
+
+
+

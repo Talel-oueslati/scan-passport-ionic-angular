@@ -1,0 +1,54 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+   <img src="../../../assets/images/icon2.png"  routerLink="" alt="">
+    </ion-title>
+    <ion-button slot="start" style="--background:white;">
+      <ion-menu-button menu="main-menu" style="--background:white;"></ion-menu-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <br><br><br>
+  <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-3 border-right">
+        <div class="d-flex flex-column align-items-center">
+          <ion-img class="rounded-circle mt-5"  src="../../assets/images/log.png" style="width:150px; justify-content: center; display: grid;margin-left: 20%;"></ion-img>
+
+
+        </div>
+      </div>
+      <div class="col-md-5 border-right">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="text-right" style="justify-content: center;display:grid;color:black;">My Profile</h1>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-6"><ion-label class="labels"></ion-label><ion-input style="border-color: 1px solid black;" type="text" style="border: 1px solid rgb(54, 54, 54);" class="form-control" value="{{ currentUser.username }}"></ion-input></div>
+          </div><br>
+          <div class="row mt-3">
+            <div class="col-md-12"><ion-label class="labels"></ion-label><ion-input type="text" class="form-control"style="border: 1px solid rgb(54, 54, 54);" value="{{ currentUser.email }}"></ion-input></div>
+          </div>
+          <div class="row mt-3">
+            <ul>
+              <li *ngFor="let role of currentUser.roles">
+                <ion-input type="text" class="form-control" value="{{ role }}"></ion-input>
+              </li>
+            </ul>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6"><ion-label style="color: black;" class="labels">Country</ion-label><ion-input type="text" class="form-control" style="border: 1px solid rgb(54, 54, 54);" placeholder="country" value="Tunis" disabled></ion-input></div>
+          </div>
+          <div class="mt-5 text-center"><ion-button  *ngIf="adminboard"  style="border-radius: 8%; " class="dash"  routerLink="/admin">Return to Dashboard</ion-button></div>
+          <div class="mt-5 text-center"><ion-button  (click)="getReservationCode()" *ngIf="userboard" style="border-radius: 8%; " class="dash"  routerLink="/profile">Get Your Reservation Code</ion-button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

@@ -1,0 +1,108 @@
+.container {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 20px;
+
+  }
+
+  ion-content{
+    --ion-background-color:rgb(255, 255, 255);
+  }
+  ion-button{
+    --background:rgb(255, 255, 255);
+  }
+  ion-title{
+    width: 200px;
+  }
+  ion-toolbar{
+    --background:white;
+  }
+  ion-item{
+
+    --background:white;
+    --color:rgb(5, 4, 4);
+
+    margin-top: 10%;
+    height: 30px;
+
+  }
+  ion-input{
+
+
+  }
+
+  ion-menu-button{
+    --color:rgb(0, 0, 0);
+  }
+  .cl{
+    --background:rgb(173, 162, 162);
+    height: 10%;
+  }
+
+
+  .sc{
+
+    --border-color:#3518db;
+    --color:rgb(255, 255, 255);
+    --background:#3518db;
+    font-family: sans-serif;
+
+
+
+
+  }
+  .save{
+
+    --border-color:#3518db;
+    --color:rgb(255, 255, 255);
+    --background:#3518db;
+    font-family: sans-serif;
+
+
+  }
+  .select{
+
+    --border-color:#3518db;
+    --color:rgb(255, 255, 255);
+    --background: #3518db;
+    font-family:sans-serif;
+
+  }
+
+  .savebutton{
+    --border-color:#3518db;
+    --color:rgb(255, 255, 255);
+    --background:#3518db;
+    font-family: sans-serif;
+    float: right;
+    margin-top:10%;
+  }
+
+
+
+  .input-field {
+
+  width: 60%;
+
+  height: 40px;
+
+  margin-bottom: 20px;
+
+  padding: 10px;
+
+  font-size: 16px;
+
+  border: 1pxsolidgray;
+
+  border-radius: 5px;
+
+  }
+
+
+
+
